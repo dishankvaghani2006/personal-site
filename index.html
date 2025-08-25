@@ -19,6 +19,18 @@
             font-weight: normal;
         }
 
+        .blinking-text {
+            animation: blinker 1s linear infinite;
+            animation-duration: 3s;
+            /* Applies the 'blinker' animation */
+        }
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+                /* At 50% of the animation, the text becomes fully transparent */
+            }
+        }
+
         h2 {
             font-size: 2.5rem;
             font-weight: normal;
@@ -28,12 +40,34 @@
             position: relative;
             top: 0px;
             right: 400px;
+            animation-name: slideRight;
+            /* The name of your keyframes rule */
+            animation-duration: 7s;
+            /* How long the animation takes to complete */
+            animation-timing-function: ease-in-out;
+            /* Controls the animation's speed curve */
+            animation-iteration-count: infinite;
+            /* How many times the animation should repeat (e.g., infinite for continuous) */
+            animation-direction: alternate;
+            /* Makes the animation go back and forth */
+
         }
 
         .bottom-cloud {
             position: relative;
             top: 50px;
             left: 400px;
+            animation-name: slideRight;
+            /* The name of your keyframes rule */
+            animation-duration: 7s;
+            /* How long the animation takes to complete */
+            animation-timing-function: ease-in-out;
+            /* Controls the animation's speed curve */
+            animation-iteration-count: infinite;
+            /* How many times the animation should repeat (e.g., infinite for continuous) */
+            animation-direction: alternate;
+            /* Makes the animation go back and forth */
+
         }
 
         .image-container {
@@ -62,6 +96,7 @@
             color: #A0BCD7;
         }
 
+
         hr {
             border: dotted #A0BCD7 6px;
             border-bottom: none;
@@ -79,6 +114,12 @@
 
         .getintouch {
             margin-top: 100px;
+            margin-inline-start: auto;
+            margin-inline-end: auto;
+            text-align: center;
+        }
+        .getintouch > p{
+            margin: 20px;
         }
 
         .parent {
@@ -90,6 +131,26 @@
             text-align: start;
             grid-template-columns: 0.5fr 1fr;
             grid-template-rows: repeat(1, 1fr);
+
+
+            @media (max-width: 1200px) {
+                display: grid;
+            grid-template-columns: 1fr;
+                grid-template-rows: repeat(1, 1fr);
+                
+            }
+        }
+
+        @keyframes slideRight {
+            from {
+                transform: translateX(0);
+                /* Start at the original position */
+            }
+
+            to {
+                transform: translateX(200px);
+                /* Move 200px to the right (adjust as needed) */
+            }
         }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -98,14 +159,13 @@
 </head>
 
 <body>
-
     <div class="image-container">
         <img class="landing-page" src="./images/pramod-tiwari-qE2xl1Tc9Js-unsplash.jpg" height="700px" width="100%"
             alt="Sample Image">
 
         <div class="position-absolute top-50 start-50 translate-middle text-white text-center">
             <img class="top-cloud" src="./images/ezgif.com-webp-to-png-converter.png" />
-            <h1 style="font-family: Dancing Script, cursive; font-weight: bold; font-size: 80px;">I'm Dishank.</h1>
+            <h1 style="font-family: Dancing Script, cursive; font-weight: bold; font-size: 80px;">I'm Dishank<span class="blinking-text">.</span></h1>
             <h2>a <span class="pro">pro</span>grammer.</h2>
             <img class="bottom-cloud" src="./images/ezgif.com-webp-to-png-converter.png" />
         </div>
@@ -162,18 +222,18 @@
     </div>
 
     <div style="background-color: #607DA5; margin: 0;">
-    <div class="container"style="background-color: #607DA5; color:white; width: 100%;" >
-        <footer class="py-5 mt-4">
-            <ul class="nav justify-content-center  pb-3 mb-3">
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Linkedin</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Twitter</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Website</a></li>
-                
-            </ul>
-            <p class="text-center">© Dishank vaghani @ 2025 Areva Perfumes</p>
-        </footer>
+        <div class="container" style="background-color: #607DA5; color:white; width: 100%;">
+            <footer class="py-5 mt-4">
+                <ul class="nav justify-content-center  pb-3 mb-3">
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Linkedin</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Twitter</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Website</a></li>
+
+                </ul>
+                <p class="text-center">© Dishank vaghani @ 2025 Areva Perfumes</p>
+            </footer>
+        </div>
     </div>
-</div>
 
 
 
